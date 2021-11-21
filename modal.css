@@ -1,0 +1,52 @@
+.overlay {
+  visibility: hidden;
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  transition: 0.3s all;
+}
+
+.modal-wrapper {
+  visibility: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 30;
+  pointer-events: none;
+}
+
+.modal {
+  pointer-events: all;
+  visibility: hidden;
+  width: 100%;
+  max-width: 500px;
+  position: fixed;
+  z-index: 30;
+  /* побочные стили окна */
+  text-align: center;
+  padding: 30px;
+  border-radius: 3px;
+  background-color: #fff;
+}
+.modal.active-modal,
+.overlay.active-modal,
+.modal-wrapper {
+  visibility: visible;
+}
+.overlay.active-modal {
+  opacity: 1;
+}
+
+.js-closeBtn-modal {
+  cursor: pointer;
+}
